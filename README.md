@@ -30,7 +30,7 @@ npx wrangler pages deploy dist --project-name sitegoons
 
 ### GitHub Actions (auto-deploy on push to `main`)
 
-Repo: [github.com/FieldsBarnettCFA/site-goons](https://github.com/FieldsBarnettCFA/site-goons)
+Repo: [github.com/FieldsBarnett/site-goons-1](https://github.com/FieldsBarnett/site-goons-1)
 
 Add one repository secret to enable CI deploys:
 
