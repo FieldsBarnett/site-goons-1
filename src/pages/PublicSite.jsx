@@ -242,7 +242,7 @@ export default function PublicSite({ onNavigate }) {
                     </a>
                   </div>
 
-                  <div className="mt-8 flex flex-wrap items-center gap-3.5 pb-6 sm:pb-4">
+                  <div className="mt-8 flex flex-wrap items-center gap-3.5 pb-2">
                     <a
                       href="#quote-block"
                       onClick={(e) => {
@@ -263,20 +263,6 @@ export default function PublicSite({ onNavigate }) {
                         <ChevronIcon />
                       </a>
                     </span>
-                  </div>
-
-                  {/* Deep 3D Recessed Diagonal Saw-Cut Channel */}
-                  <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -bottom-1 -right-2 h-40 w-48 sm:h-52 sm:w-64"
-                  >
-                    <svg viewBox="0 0 260 210" fill="none" className="h-full w-full">
-                      <polygon points="36,210 260,0 260,36 74,210" fill="#6F89A6" />
-                      <polygon points="50,210 260,12 260,26 64,210" fill="#3B5B80" />
-                      <polygon points="82,210 260,42 260,210" fill="#EDF2F7" />
-                      <line x1="82" y1="210" x2="260" y2="42" stroke="#FFFFFF" strokeWidth="3.5" />
-                      <line x1="40" y1="210" x2="260" y2="3" stroke="#DCE6F0" strokeWidth="2.5" />
-                    </svg>
                   </div>
                 </div>
               </div>
