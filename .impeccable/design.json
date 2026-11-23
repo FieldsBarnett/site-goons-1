@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-23T01:20:00Z",
+  "title": "Design System: SiteGoons",
+  "extensions": {
+    "colorMeta": {
+      "action-blue": {
+        "role": "primary",
+        "displayName": "Action Blue",
+        "canonical": "#1565c0",
+        "tonalRamp": ["#072447", "#0c386e", "#114d96", "#1565c0", "#3a82d6", "#6da4e5", "#a8c9f2", "#e3effc"]
+      },
+      "sky-bright": {
+        "role": "primary",
+        "displayName": "Sky Bright",
+        "canonical": "#4da7e6",
+        "tonalRamp": ["#0c314d", "#154b75", "#226ba3", "#328acf", "#4da7e6", "#7bc0f0", "#b2dbf7", "#e6f4fd"]
+      },
+      "sky-mid": {
+        "role": "primary",
+        "displayName": "Sky Mid",
+        "canonical": "#1a6ec4",
+        "tonalRamp": ["#082647", "#0e3c70", "#14549a", "#1a6ec4", "#408ad9", "#74ace8", "#add0f5", "#e6f1fc"]
+      },
+      "sky-deep": {
+        "role": "primary",
+        "displayName": "Sky Deep",
+        "canonical": "#0f478d",
+        "tonalRamp": ["#051933", "#092952", "#0c3870", "#0f478d", "#2c66ad", "#5d8ec9", "#9abce3", "#dce9f7"]
+      },
+      "depth-blue": {
+        "role": "primary",
+        "displayName": "Depth Blue",
+        "canonical": "#0d2e5e",
+        "tonalRamp": ["#041226", "#081f40", "#0d2e5e", "#19437d", "#33609c", "#5f85b8", "#9bb5d8", "#dce6f4"]
+      },
+      "footer-navy": {
+        "role": "primary",
+        "displayName": "Footer Navy",
+        "canonical": "#092145",
+        "tonalRamp": ["#030d1c", "#061730", "#092145", "#153463", "#2d4f82", "#5978a6", "#96add0", "#dbe4f2"]
+      },
+      "hardhat-yellow": {
+        "role": "secondary",
+        "displayName": "Hardhat Yellow",
+        "canonical": "#f4b829",
+        "tonalRamp": ["#3d2c05", "#694c0a", "#997011", "#c9951b", "#f4b829", "#f8cb5e", "#fbe09b", "#fef4d8"]
+      },
+      "level-ok": {
+        "role": "secondary",
+        "displayName": "Level OK",
+        "canonical": "#15803d",
+        "tonalRamp": ["#072e16", "#0c4a23", "#116631", "#15803d", "#2ea359", "#64c287", "#a5e0ba", "#dcfce7"]
+      },
+      "level-warn": {
+        "role": "secondary",
+        "displayName": "Level Warn",
+        "canonical": "#b45309",
+        "tonalRamp": ["#3b1a03", "#632d05", "#8c4007", "#b45309", "#d97706", "#eb9e42", "#f6c88a", "#fef3c7"]
+      },
+      "cumulus-pure": {
+        "role": "neutral",
+        "displayName": "Cumulus Pure",
+        "canonical": "#fbfcfd",
+        "tonalRamp": ["#1d242b", "#37424d", "#556370", "#798896", "#9faebb", "#c4cfd9", "#e3e9ef", "#fbfcfd"]
+      },
+      "cumulus-white": {
+        "role": "neutral",
+        "displayName": "Cumulus White",
+        "canonical": "#f5f7f9",
+        "tonalRamp": ["#1b2229", "#343f4a", "#52606e", "#748494", "#9aa9b8", "#c0ccd7", "#dfe5ec", "#f5f7f9"]
+      },
+      "mist-surface": {
+        "role": "neutral",
+        "displayName": "Mist Surface",
+        "canonical": "#e9edf1",
+        "tonalRamp": ["#1a2129", "#323d48", "#4e5c6b", "#6f8091", "#94a4b4", "#b8c5d2", "#d6dfe7", "#e9edf1"]
+      },
+      "saw-silver": {
+        "role": "neutral",
+        "displayName": "Saw Silver",
+        "canonical": "#c9d2db",
+        "tonalRamp": ["#19222b", "#313e4b", "#4c5c6c", "#6a7c8f", "#8b9db0", "#adbccf", "#c9d2db", "#edf1f5"]
+      },
+      "input-border": {
+        "role": "neutral",
+        "displayName": "Input Border",
+        "canonical": "#9ab0c7",
+        "tonalRamp": ["#172433", "#2a3e54", "#415b78", "#5b7999", "#7a97b5", "#9ab0c7", "#c4d3e3", "#edf2f7"]
+      },
+      "ink-primary": {
+        "role": "neutral",
+        "displayName": "Ink Primary",
+        "canonical": "#0f2442",
+        "tonalRamp": ["#06101f", "#0f2442", "#1c3963", "#2f5285", "#4c70a3", "#7695c0", "#aec2de", "#e4ecf7"]
+      },
+      "ink-body": {
+        "role": "neutral",
+        "displayName": "Ink Body",
+        "canonical": "#253a54",
+        "tonalRamp": ["#0d1724", "#18283b", "#253a54", "#395270", "#56708f", "#7f96b2", "#b3c2d4", "#e6ecf3"]
+      },
+      "slate-muted": {
+        "role": "neutral",
+        "displayName": "Slate Muted",
+        "canonical": "#3b4f68",
+        "tonalRamp": ["#141d29", "#253447", "#3b4f68", "#536985", "#7187a3", "#97a9bf", "#c3cedc", "#ebeef3"]
+      },
+      "sky-tint": {
+        "role": "neutral",
+        "displayName": "Sky Tint",
+        "canonical": "#d7e9fa",
+        "tonalRamp": ["#12263a", "#21405e", "#345d85", "#4d7eab", "#70a0cc", "#9bc2e5", "#d7e9fa", "#f2f8fe"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display Stencil",
+        "purpose": "Hero headline stamped in Depth Blue at the top of the primary cut-block."
+      },
+      "headline": {
+        "displayName": "Section Headline",
+        "purpose": "Major section titles over the sky void or inside full-width cut-blocks."
+      },
+      "title": {
+        "displayName": "Block Title",
+        "purpose": "Quote panel, service card, and sample project headings."
+      },
+      "body": {
+        "displayName": "Residential Body",
+        "purpose": "Plain-spoken homeowner descriptions, scope summaries, and form input values."
+      },
+      "label": {
+        "displayName": "Technical Label & Spec",
+        "purpose": "Navigation links, CTA buttons, trade chips, phone numbers, and tabular measurements."
+      }
+    },
+    "shadows": [
+      {
+        "name": "block-primary",
+        "value": "drop-shadow(0 20px 34px rgba(8, 28, 62, 0.36)) drop-shadow(0 5px 10px rgba(8, 28, 62, 0.2))",
+        "purpose": "Clip-safe ambient elevation on outer wrappers for hero, quote, featured sample, process, and contact slabs."
+      },
+      {
+        "name": "block-compact",
+        "value": "drop-shadow(0 12px 22px rgba(8, 28, 62, 0.26))",
+        "purpose": "Clip-safe ambient elevation on outer wrappers for 4-column service cards and stacked sample scopes."
+      },
+      {
+        "name": "slab-bevel-primary",
+        "value": "inset 0 2px 0 rgba(255, 255, 255, 0.95), inset 2px 0 0 rgba(255, 255, 255, 0.75), inset 0 -8px 0 rgba(186, 200, 216, 0.55), inset -5px 0 0 rgba(196, 208, 222, 0.45)",
+        "purpose": "3D chiseled stone thickness and sunlit top/left bevel inside primary .cq-block slabs."
+      },
+      {
+        "name": "nav-slab",
+        "value": "inset 0 -5px 0 rgba(186, 200, 216, 0.6), 0 10px 24px rgba(8, 28, 62, 0.24)",
+        "purpose": "Bottom stone bevel and downward shadow for the full-bleed sticky navigation slab."
+      },
+      {
+        "name": "goon-figure",
+        "value": "drop-shadow(0 8px 12px rgba(8, 28, 62, 0.32))",
+        "purpose": "Contact grounding shadow behind transparent-background illustrated raster SiteGoons."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-quarry",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Crisp 180ms button hover and tactile control transitions."
+      },
+      {
+        "name": "ease-paint-sheen",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "3.4s paint roller sheen glide across the quote submit button."
+      },
+      {
+        "name": "cycle-saw",
+        "value": "1.1s ease-in-out infinite",
+        "purpose": "Reciprocating saw motion and staggered 0.55s spark glints on SawCutterGoon."
+      },
+      {
+        "name": "cycle-roller",
+        "value": "1.8s ease-in-out infinite (0.72s on CTA hover)",
+        "purpose": "ButtonPainterGoon roller motion synchronized with CTA hover intent."
+      },
+      {
+        "name": "cycle-crane-hoist",
+        "value": "3.4s ease-in-out infinite (0.55s level-adjust when re-leveling)",
+        "purpose": "Gentle vertical jib-crane bob on CraneHoistGoon switching to active level-adjust tilt on click."
+      },
+      {
+        "name": "cycle-seam-patrol",
+        "value": "7.5s ease-in-out infinite",
+        "purpose": "Horizontal 140px patrol of BackgroundRollerGoon and coated seam bar."
+      },
+      {
+        "name": "relevel-settle",
+        "value": "700ms ease-out (1150ms tilt lock)",
+        "purpose": "Quote slab -1.35deg tilt returning to 0deg as the level readout locks green."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "container-max", "value": "1380px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Cut-Block Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "9px 45-degree chamfered Action Blue CTA button with uppercase monospace type and geometric SVG chevron.",
+      "html": "<button type=\"button\" class=\"ds-btn-primary\"><span>Request a Quote</span><svg width=\"14\" height=\"14\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M6 3.5L10.5 8L6 12.5\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\" stroke-linejoin=\"miter\"/></svg></button>",
+      "css": ".ds-btn-primary { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: var(--cq-action-blue, #1565c0); color: #ffffff; border: none; padding: 14px 24px; font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.875rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; clip-path: polygon(9px 0%, calc(100% - 9px) 0%, 100% 9px, 100% calc(100% - 9px), calc(100% - 9px) 100%, 9px 100%, 0% calc(100% - 9px), 0% 9px); transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1), transform 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background-color: var(--cq-depth, #0d2e5e); transform: translateY(-1px); } .ds-btn-primary:active { transform: translateY(0); } .ds-btn-primary:focus-visible { outline: 2.5px solid var(--cq-sky-bright, #4da7e6); outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Chamfered Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Nested 9px/8px chamfered Depth Blue bordered button that lifts and inverts on hover.",
+      "html": "<span class=\"ds-btn-secondary-wrap\"><button type=\"button\" class=\"ds-btn-secondary\"><span>Sample Work</span><svg width=\"14\" height=\"14\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M6 3.5L10.5 8L6 12.5\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\" stroke-linejoin=\"miter\"/></svg></button></span>",
+      "css": ".ds-btn-secondary-wrap { display: inline-flex; padding: 1.5px; background-color: var(--cq-depth, #0d2e5e); clip-path: polygon(9px 0%, calc(100% - 9px) 0%, 100% 9px, 100% calc(100% - 9px), calc(100% - 9px) 100%, 9px 100%, 0% calc(100% - 9px), 0% 9px); transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-secondary-wrap:hover { transform: translateY(-1px); } .ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background-color: #ffffff; color: var(--cq-depth, #0d2e5e); border: none; padding: 14px 24px; font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.875rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; clip-path: polygon(8px 0%, calc(100% - 8px) 0%, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px), 0% 8px); transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1), color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-secondary:hover { background-color: var(--cq-depth, #0d2e5e); color: #ffffff; } .ds-btn-secondary:focus-visible { outline: 2.5px solid var(--cq-sky-bright, #4da7e6); outline-offset: 2px; }"
+    },
+    {
+      "name": "Chamfered Trade Selector Chip",
+      "kind": "chip",
+      "refersTo": "chip-trade",
+      "description": "Nested 7px/6px chamfered toggle chips for selecting Kitchen, Bathroom, Addition, or Renovation scope.",
+      "html": "<div class=\"ds-chip-row\"><span class=\"ds-chip-wrap ds-chip-wrap-active\"><button type=\"button\" class=\"ds-chip ds-chip-active\" aria-pressed=\"true\">Kitchen</button></span><span class=\"ds-chip-wrap\"><button type=\"button\" class=\"ds-chip\" aria-pressed=\"false\">Bathroom</button></span></div>",
+      "css": ".ds-chip-row { display: inline-flex; gap: 8px; } .ds-chip-wrap { display: inline-flex; padding: 1.5px; background-color: #8aa2bc; clip-path: polygon(7px 0%, calc(100% - 7px) 0%, 100% 7px, 100% calc(100% - 7px), calc(100% - 7px) 100%, 7px 100%, 0% calc(100% - 7px), 0% 7px); transition: background-color 160ms ease; } .ds-chip-wrap:hover { background-color: var(--cq-sky-mid, #1a6ec4); } .ds-chip-wrap-active { background-color: #1565c0; } .ds-chip { display: block; width: 100%; border: none; font-family: var(--font-mono, 'JetBrains Mono', monospace); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; background-color: #ffffff; color: var(--cq-depth, #0d2e5e); padding: 10px 14px; cursor: pointer; clip-path: polygon(6px 0%, calc(100% - 6px) 0%, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0% calc(100% - 6px), 0% 6px); transition: background-color 160ms ease, color 160ms ease; } .ds-chip:hover { background-color: #edf5fc; } .ds-chip-active { background-color: #1565c0; color: #ffffff; } .ds-chip-active:hover { background-color: var(--cq-depth, #0d2e5e); } .ds-chip:focus-visible { outline: 2.5px solid var(--cq-sky-bright, #4da7e6); outline-offset: 2px; }"
+    },
+    {
+      "name": "Chamfered Quote Form Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Nested 6px/5px chamfered input shell whose frame illuminates to Action Blue on focus-within.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-neighborhood\">Atlanta Neighborhood</label><div class=\"ds-input-wrap\"><input id=\"ds-neighborhood\" class=\"ds-input\" type=\"text\" placeholder=\"e.g. Virginia-Highland, Decatur, Kirkwood\" /></div></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 6px; max-width: 340px; } .ds-label { font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--cq-slate, #3b4f68); } .ds-input-wrap { padding: 1.5px; background-color: #9ab0c7; clip-path: polygon(6px 0%, calc(100% - 6px) 0%, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0% calc(100% - 6px), 0% 6px); transition: background-color 160ms ease; } .ds-input-wrap:focus-within { background-color: #1565c0; } .ds-input { display: block; width: 100%; border: none; background-color: #ffffff; padding: 10px 14px; font-family: var(--font-sans, 'Barlow', sans-serif); font-size: 0.875rem; color: var(--cq-ink, #0f2442); clip-path: polygon(5px 0%, calc(100% - 5px) 0%, 100% 5px, 100% calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 0% calc(100% - 5px), 0% 5px); } .ds-input::placeholder { color: #5b7088; } .ds-input:focus { outline: none; }"
+    },
+    {
+      "name": "Chiseled Service Cut-Block",
+      "kind": "card",
+      "refersTo": "cut-block-sm",
+      "description": "12px chamfered Cloud Stone service slab with 3D inset bevel, datum crosshair, and clip-safe drop shadow.",
+      "html": "<div class=\"ds-card-wrap\"><article class=\"ds-card\"><svg class=\"ds-crosshair\" width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" aria-hidden=\"true\"><line x1=\"7\" y1=\"0\" x2=\"7\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.25\"/><line x1=\"0\" y1=\"7\" x2=\"14\" y2=\"7\" stroke=\"currentColor\" stroke-width=\"1.25\"/></svg><div class=\"ds-card-head\"><span class=\"ds-card-code\">01 /</span><h3 class=\"ds-card-title\">KITCHENS</h3></div><p class=\"ds-card-body\">Cabinetry, island framing, tile backsplashes, lighting, and layout updates built for daily use.</p><a href=\"#\" class=\"ds-card-cta\"><span>Plan a Kitchen</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M6 3.5L10.5 8L6 12.5\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\" stroke-linejoin=\"miter\"/></svg></a></article></div>",
+      "css": ".ds-card-wrap { filter: drop-shadow(0 12px 22px rgba(8, 28, 62, 0.26)); max-width: 320px; } .ds-card { position: relative; background-color: #f4f7fa; background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(235, 241, 247, 0.52) 100%); box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.92), inset 0 -6px 0 rgba(186, 200, 216, 0.52), inset -3px 0 0 rgba(196, 208, 222, 0.4); clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px); padding: 24px; color: var(--cq-ink, #0f2442); } .ds-crosshair { position: absolute; top: 16px; right: 16px; color: #9ab0c7; pointer-events: none; } .ds-card-head { display: flex; align-items: baseline; gap: 8px; border-bottom: 1px solid var(--cq-saw, #c9d2db); padding-bottom: 12px; } .ds-card-code { font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.875rem; font-weight: 700; color: #1565c0; } .ds-card-title { margin: 0; font-family: var(--font-display, 'Saira Stencil One', sans-serif); font-size: 1.35rem; font-weight: 400; letter-spacing: 0.02em; color: var(--cq-depth, #0d2e5e); } .ds-card-body { margin: 14px 0 18px; font-family: var(--font-sans, 'Barlow', sans-serif); font-size: 0.875rem; line-height: 1.6; color: #253a54; } .ds-card-cta { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1565c0; text-decoration: none; } .ds-card-cta:hover { color: var(--cq-depth, #0d2e5e); }"
+    },
+    {
+      "name": "Full-Bleed Stone Navigation Slab",
+      "kind": "nav",
+      "refersTo": "nav-bar",
+      "description": "Edge-to-edge sticky Cloud Stone navigation slab with 5px bottom inset bevel, stencil wordmark, and phone pill.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Primary\"><a href=\"#\" class=\"ds-nav-brand\">SITEGOONS</a><div class=\"ds-nav-links\"><a href=\"#\" class=\"ds-nav-link\">Services</a><a href=\"#\" class=\"ds-nav-link\">Sample Work</a><a href=\"#\" class=\"ds-nav-link\">Process</a></div><a href=\"tel:2058637564\" class=\"ds-nav-phone\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 20 20\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3.5 4.5C3.5 3.67 4.17 3 5 3h2.2c.46 0 .86.31.97.76l.7 2.8a1 1 0 0 1-.42 1.07l-1.45.97a10.5 10.5 0 0 0 4.4 4.4l.97-1.45a1 1 0 0 1 1.07-.42l2.8.7c.45.11.76.51.76.97V15c0 .83-.67 1.5-1.5 1.5h-.5C7.82 16.5 3.5 12.18 3.5 5v-.5Z\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linejoin=\"round\"/></svg>205-863-7564</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; background-color: #f6f8fa; background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(235, 241, 247, 0.6) 100%); box-shadow: inset 0 -5px 0 rgba(186, 200, 216, 0.6), 0 10px 24px rgba(8, 28, 62, 0.24); border-bottom: 1.5px solid #b8c7d8; padding: 14px 28px; } .ds-nav-brand { font-family: var(--font-display, 'Saira Stencil One', sans-serif); font-size: 1.5rem; letter-spacing: 0.04em; color: var(--cq-depth, #0d2e5e); text-decoration: none; } .ds-nav-brand:hover { color: #1565c0; } .ds-nav-links { display: flex; gap: 24px; } .ds-nav-link { font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--cq-ink, #0f2442); text-decoration: none; } .ds-nav-link:hover { color: #1565c0; } .ds-nav-phone { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(13, 46, 94, 0.25); background-color: var(--cq-mist, #e9edf1); padding: 8px 14px; font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.8125rem; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--cq-depth, #0d2e5e); text-decoration: none; transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease; } .ds-nav-phone:hover { border-color: #1565c0; background-color: #1565c0; color: #ffffff; }"
+    },
+    {
+      "name": "Interactive Level Status Readout",
+      "kind": "custom",
+      "refersTo": "chip-trade",
+      "description": "Signature spirit-level readout pill that nudges the quote slab and triggers CraneHoistGoon to re-level it.",
+      "html": "<button type=\"button\" class=\"ds-level-pill\"><span class=\"ds-level-dot\"></span>0.0° LEVEL</button>",
+      "css": ".ds-level-pill { display: inline-flex; align-items: center; gap: 6px; border: 1px solid rgba(21, 128, 61, 0.35); border-radius: 0; background-color: #dcfce7; color: var(--cq-level-ok, #15803d); padding: 4px 10px; font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background-color 160ms ease; } .ds-level-pill:hover { background-color: #bbf7d0; } .ds-level-pill:focus-visible { outline: 2.5px solid var(--cq-sky-bright, #4da7e6); outline-offset: 2px; } .ds-level-dot { width: 8px; height: 8px; border-radius: 9999px; background-color: var(--cq-level-ok, #15803d); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Sunlit Cloud Quarry",
+    "overview": "SiteGoons transforms a residential general contracting website into a crisp, sunlit architectural quarry where heavy, chiseled Cumulus White stone slabs float over a deep luminous Atlanta sky void. Rather than relying on dark-navy-and-orange contractor templates or generic stock renovation photography, the interface communicates real craft through tileable Cloud Stone surface texture, 3D inset slab bevels, 45-degree chamfered corners on blocks and controls alike, + datum registration crosshairs, tabular measurements, and high-contrast stencil typography.\n\nThe binding brand signature is a crew of transparent-background illustrated construction \"goons\" actively building the live interface itself—sawing a volumetric diagonal cut-channel, hoisting and leveling the quote slab from atop its chamfered edge until the readout locks at 0.0°, and rolling fresh blue paint across the primary button and section seam. Their motion is purposeful, mechanical, and fully pausable under prefers-reduced-motion, adding unmistakable warmth without ever obscuring copy or blocking homeowner actions.",
+    "keyCharacteristics": [
+      "Sunlit architectural palette pairing chiseled Cloud Stone cut-blocks (public/images/cloud-stone-texture.png) with 3D inset slab bevels against a multi-stop Atlanta Sky Void gradient.",
+      "Unified 45-degree chamfered polygon geometry (clip-path) across cut-blocks, primary and secondary buttons, trade chips, and form inputs, accented by + datum crosshairs and geometric SVG chevrons.",
+      "Self-hosted industrial type trio: Saira Stencil One for display stamps, Barlow for plain-spoken body copy, and JetBrains Mono for tabular measurements and controls.",
+      "Clip-safe ambient drop shadows (filter: drop-shadow) lifting chamfered slabs off the sky void, paired with a full-bleed edge-to-edge stone navigation slab.",
+      "Transparent-background illustrated raster SiteGoons (public/images/goon-*.png) in Hardhat Yellow and workwear blue animated with mechanical CSS transforms on UI edges, seams, and buttons."
+    ],
+    "rules": [
+      {
+        "name": "The Sunlit Quarry Contrast Rule",
+        "body": "Content lives on high-contrast Cumulus White cut-blocks (#f5f7f9 with #0d2e5e/#0f2442 ink); only section headings (#ffffff) and short framing lines (#d7e9fa) sit directly on the Atlanta Sky Void.",
+        "section": "colors"
+      },
+      {
+        "name": "The Hardhat Signal Rule",
+        "body": "Hardhat Yellow (#f4b829) belongs exclusively to the animated SiteGoons crew and their tools—never use it for buttons, alerts, or section fills.",
+        "section": "colors"
+      },
+      {
+        "name": "The Stencil-Once-Per-Block Rule",
+        "body": "Use Saira Stencil One only for headings and the SITEGOONS wordmark—never for paragraphs, form labels, or buttons, where stencil bridges hurt readability.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Spec Rule",
+        "body": "Every phone number, duration, footprint, step number, and angle readout uses JetBrains Mono with tabular-nums so technical specifications align like a contractor's takeoff sheet.",
+        "section": "typography"
+      },
+      {
+        "name": "The Clip-Safe Shadow Rule",
+        "body": "Pair internal inset bevels on the clipped slab with filter: drop-shadow(...) on an outer wrapper—never apply outer box-shadow directly to a clip-path element, and never use hard offset shadows.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Nested Quarry Chamfer Rule",
+        "body": "Every chamfered control with a border (secondary buttons, trade chips, form inputs) uses a 1.5px-padded outer clip-path wrapper around a 1px-smaller inner clip-path fill so 45-degree corners never break their stroke. Do not introduce rounded pill buttons or soft border-radius cards.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do layer public/images/cloud-stone-texture.png, the 3D inset slab bevels, and an outer .cq-block-shadow / .cq-block-shadow-sm wrapper on every chamfered cut-block so stone texture and clip-safe shadows stay unified.",
+      "Do use the nested 1.5px chamfer wrapper pattern (.cq-btn-secondary-wrap, .cq-chip-wrap, .cq-input-wrap) for bordered controls and geometric ChevronIcon SVGs for directional cues.",
+      "Do self-host Saira Stencil One, Barlow, and JetBrains Mono from /fonts/ and apply tabular-nums on every phone number, schedule, footprint, and angle readout.",
+      "Do mark every illustrated raster SiteGoon container aria-hidden=\"true\" and pointer-events-none with alt=\"\", preserve clean clearance on mobile and desktop, and halt all keyframes under prefers-reduced-motion: reduce.",
+      "Do keep every sample project card explicitly badged as SAMPLE SCOPE, confine all services to residential remodeling in Greater Atlanta, and keep direct phone (205-863-7564) and email (fields@sitegoons.com) links visible and clickable."
+    ],
+    "donts": [
+      "Don't use rounded border-radius cards or pill buttons—Cloud Quarry uses proportional 45-degree clip-path chamfers (5px–18px) across slabs and controls.",
+      "Don't use Hardhat Yellow (#f4b829) for buttons, backgrounds, or text—keep it exclusive to the SiteGoons crew and their tools.",
+      "Don't set body paragraphs or form labels in Saira Stencil One, and don't use ASCII > characters in place of geometric SVG chevrons.",
+      "Don't replace the transparent-background illustrated raster SiteGoons with crude inline figure SVGs or let crew characters overlap form inputs, buttons, or readable copy.",
+      "Don't add dark-mode contractor cliches, fabricated client testimonials, license numbers, or stock renovation photography to fill cut-blocks."
+    ]
+  }
+}
