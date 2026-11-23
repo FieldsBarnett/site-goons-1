@@ -1,6 +1,6 @@
 ---
 name: SiteGoons
-description: Cloud Quarry visual system for Atlanta residential general contracting — chiseled Cumulus White cut-blocks over a luminous Atlanta Sky Void, tended by animated illustrated SiteGoons.
+description: Dual-surface Cloud Quarry visual system for Atlanta residential general contracting — 3D Extruded Cut-Block Quarry for the customer site and login, and Atmospheric Quarry Control Deck for the /admin operations panel.
 colors:
   action-blue: "#1565c0"
   sky-bright: "#4da7e6"
@@ -116,7 +116,19 @@ components:
 
 ## Overview
 
-**Creative North Star: "The Sunlit Cloud Quarry"**
+**Creative North Star: "The Sunlit Cloud Quarry — Dual-Surface System"**
+
+SiteGoons shares one Cloud Quarry visual grammar (chiseled Cumulus White stone, luminous Depth/Action Blue ink, self-hosted `Saira Stencil One` / `Barlow` / `JetBrains Mono`, and 45-degree chamfered geometry) expressed across **two distinct surface styles** based on who is using the page:
+
+### Style 1 — 3D Extruded Cut-Block Quarry (Customer-Facing & Login)
+- **Applies to:** Public marketing site (`/`, `src/pages/PublicSite.jsx`), Admin Login page (`/admin` when signed out, `src/pages/AdminLogin.jsx`), and any future customer-facing quote or landing routes.
+- **Mode:** Persuade / Auth.
+- **Signature grammar:** Sculpted 3D extruded Cumulus White stone slabs (`.cq-slab-3d-shell` → `.cq-slab-3d-depth` → `.cq-slab-3d-face` layered with `/images/cloud-stone-texture.png`) floating over the vibrant Atlanta Sky Void (`.cq-sky-void-3d`) with thick visible beveled undersides, deep directional cast shadows, a twin-slab 3D top navigation bar (`.cq-nav-slab-3d`), volumetric diagonal saw-cut channels, and nested 45-degree chamfered controls (`.cq-btn-primary`, `.cq-btn-secondary-wrap`, `.cq-chip-wrap`, `.cq-input-wrap`).
+
+### Style 2 — Atmospheric Quarry Control Deck (Authenticated Admin Panel)
+- **Applies to:** Authenticated internal operations panel (`/admin`, `src/pages/AdminDeck.jsx`, planned Convex backend) and any future internal crew dashboards.
+- **Mode:** Operate.
+- **Signature grammar:** No floating cards over sky void and no decorative characters. Instead, the entire viewport is a unified chiseled Cumulus White stone shell (`.cq-deck-surface`) split by `1px` architectural hairlines (`#b6c5d6`): a fixed `245px` left architectural navigation rail (`.cq-deck-rail` with right-chamfered blue `.cq-deck-nav-active` indicator and lower backend/session status boxes), a top telemetry readout strip anchored by a solid Action Blue `+` dispatch block, and hairline-divided operational tables, quote pipelines, and build progress panels.
 
 SiteGoons transforms a residential general contracting website into a crisp, sunlit architectural quarry where heavy, chiseled Cumulus White stone slabs float over a deep luminous Atlanta sky void. Rather than relying on dark-navy-and-orange contractor templates or generic stock renovation photography, the interface communicates real craft through tileable Cloud Stone surface texture, 3D inset slab bevels, 45-degree chamfered corners on blocks and controls alike, `+` datum registration crosshairs, tabular measurements, and high-contrast stencil typography.
 

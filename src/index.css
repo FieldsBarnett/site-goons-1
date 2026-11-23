@@ -113,7 +113,6 @@ body {
   caret-color: var(--cq-sky-mid);
 }
 
-/* Custom scrollbar themed from Cloud Quarry palette */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -148,95 +147,153 @@ a {
   font-variant-numeric: tabular-nums;
 }
 
-/* Luminous Atlanta Sky Void ground */
-.cq-sky-void {
+/* =========================================================
+   MOCKUP A: 3D EXTRUDED CUT-BLOCK QUARRY (challenger-cloud-quarry.png)
+   ========================================================= */
+
+.cq-sky-void-3d {
   background:
-    radial-gradient(ellipse 85% 60% at 62% 18%, rgba(77, 167, 230, 0.58) 0%, transparent 65%),
-    radial-gradient(ellipse 60% 50% at 15% 85%, rgba(26, 110, 196, 0.42) 0%, transparent 60%),
-    linear-gradient(170deg, #2883d6 0%, #155da9 44%, #0d3a76 78%, #0d2e5e 100%);
+    linear-gradient(128deg, rgba(135, 206, 250, 0.34) 0%, transparent 32%),
+    radial-gradient(ellipse 75% 55% at 58% 22%, rgba(77, 167, 230, 0.72) 0%, transparent 62%),
+    radial-gradient(ellipse 55% 48% at 14% 78%, rgba(30, 122, 214, 0.5) 0%, transparent 58%),
+    linear-gradient(168deg, #217cd3 0%, #1055a2 46%, #0b3975 78%, #092a58 100%);
 }
 
-/* Chamfered Cumulus White architectural cut-blocks with chiseled Cloud Stone texture + 3D bevel depth */
-.cq-block {
-  background-color: #f4f7fa;
+/* 3D Extruded Stone Plinth — visible thick sculpted bevel underside + cast shadow */
+.cq-slab-3d-shell {
+  position: relative;
+  filter: drop-shadow(10px 26px 28px rgba(5, 21, 52, 0.52))
+    drop-shadow(2px 6px 10px rgba(5, 21, 52, 0.28));
+}
+
+/* Extruded underside & right wall of the 3D stone slab */
+.cq-slab-3d-depth {
+  position: relative;
+  padding: 0 14px 18px 0;
+  background: linear-gradient(155deg, #d7e2ec 0%, #b7c8da 45%, #8ca4be 100%);
+  clip-path: polygon(
+    20px 0%,
+    calc(100% - 34px) 0%,
+    calc(100% - 14px) 20px,
+    100% 34px,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    34px 100%,
+    14px calc(100% - 18px),
+    0% calc(100% - 34px),
+    0% 20px
+  );
+}
+
+/* Front sunlit chiseled stone face */
+.cq-slab-3d-face {
+  position: relative;
+  background-color: #f6f8fb;
   background-image:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(235, 241, 247, 0.52) 100%),
+    linear-gradient(150deg, rgba(255, 255, 255, 0.88) 0%, rgba(236, 242, 248, 0.62) 100%),
     url("/images/cloud-stone-texture.png");
   background-size: auto, 420px 420px;
   box-shadow:
-    inset 0 2px 0 rgba(255, 255, 255, 0.95),
-    inset 2px 0 0 rgba(255, 255, 255, 0.75),
-    inset 0 -8px 0 rgba(186, 200, 216, 0.55),
-    inset -5px 0 0 rgba(196, 208, 222, 0.45);
+    inset 0 2px 0 rgba(255, 255, 255, 1),
+    inset 2px 0 0 rgba(255, 255, 255, 0.9),
+    inset 0 -3px 0 rgba(169, 188, 208, 0.6),
+    inset -3px 0 0 rgba(182, 198, 216, 0.5);
   clip-path: polygon(
-    18px 0%,
-    calc(100% - 18px) 0%,
-    100% 18px,
-    100% calc(100% - 18px),
-    calc(100% - 18px) 100%,
-    18px 100%,
-    0% calc(100% - 18px),
-    0% 18px
+    20px 0%,
+    calc(100% - 20px) 0%,
+    100% 20px,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    20px 100%,
+    0% calc(100% - 20px),
+    0% 20px
   );
 }
 
-.cq-block-sm {
-  background-color: #f4f7fa;
+/* Compact 3D extruded slab for Services & Sample cards */
+.cq-slab-3d-sm-shell {
+  position: relative;
+  filter: drop-shadow(6px 16px 20px rgba(5, 21, 52, 0.42));
+}
+
+.cq-slab-3d-sm-depth {
+  position: relative;
+  padding: 0 9px 13px 0;
+  background: linear-gradient(155deg, #d7e2ec 0%, #b4c6d9 52%, #8aa2bc 100%);
+  clip-path: polygon(
+    14px 0%,
+    calc(100% - 23px) 0%,
+    calc(100% - 9px) 14px,
+    100% 24px,
+    100% calc(100% - 14px),
+    calc(100% - 14px) 100%,
+    24px 100%,
+    9px calc(100% - 13px),
+    0% calc(100% - 24px),
+    0% 14px
+  );
+}
+
+.cq-slab-3d-sm-face {
+  position: relative;
+  background-color: #f6f8fb;
   background-image:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(235, 241, 247, 0.52) 100%),
+    linear-gradient(155deg, rgba(255, 255, 255, 0.88) 0%, rgba(235, 241, 247, 0.62) 100%),
+    url("/images/cloud-stone-texture.png");
+  background-size: auto, 340px 340px;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 1),
+    inset 2px 0 0 rgba(255, 255, 255, 0.85),
+    inset 0 -2px 0 rgba(169, 188, 208, 0.55);
+  clip-path: polygon(
+    14px 0%,
+    calc(100% - 14px) 0%,
+    100% 14px,
+    100% calc(100% - 14px),
+    calc(100% - 14px) 100%,
+    14px 100%,
+    0% calc(100% - 14px),
+    0% 14px
+  );
+}
+
+/* Twin-slab 3D Nav Bar blocks (matching challenger-cloud-quarry.png) */
+.cq-nav-slab-3d {
+  background-color: #f7f9fc;
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(234, 240, 247, 0.72) 100%),
     url("/images/cloud-stone-texture.png");
   background-size: auto, 360px 360px;
   box-shadow:
-    inset 0 2px 0 rgba(255, 255, 255, 0.92),
-    inset 0 -6px 0 rgba(186, 200, 216, 0.52),
-    inset -3px 0 0 rgba(196, 208, 222, 0.4);
+    inset 0 -7px 0 #b8c9dc,
+    inset 0 -9px 0 #dce6f0;
   clip-path: polygon(
-    12px 0%,
-    calc(100% - 12px) 0%,
-    100% 12px,
-    100% calc(100% - 12px),
-    calc(100% - 12px) 100%,
-    12px 100%,
-    0% calc(100% - 12px),
-    0% 12px
+    0% 0%,
+    100% 0%,
+    100% calc(100% - 14px),
+    calc(100% - 14px) 100%,
+    14px 100%,
+    0% calc(100% - 14px)
   );
 }
 
-/* Single declared elevation on chamfered slabs */
-.cq-block-shadow {
-  filter: drop-shadow(0 20px 34px rgba(8, 28, 62, 0.36)) drop-shadow(0 5px 10px rgba(8, 28, 62, 0.2));
-}
+/* =========================================================
+   SHARED CLOUD QUARRY CHAMFERED CONTROLS
+   ========================================================= */
 
-.cq-block-shadow-sm {
-  filter: drop-shadow(0 12px 22px rgba(8, 28, 62, 0.26));
-}
-
-/* Full-bleed edge-to-edge top chamfered navigation slab */
-.cq-nav-block {
-  background-color: #f6f8fa;
-  background-image:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(235, 241, 247, 0.6) 100%),
-    url("/images/cloud-stone-texture.png");
-  background-size: auto, 380px 380px;
-  box-shadow:
-    inset 0 -5px 0 rgba(186, 200, 216, 0.6),
-    0 10px 24px rgba(8, 28, 62, 0.24);
-  border-bottom: 1.5px solid #b8c7d8;
-}
-
-/* Primary chamfered CTA button */
 .cq-btn-primary {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #1565c0;
+  background: linear-gradient(180deg, #1b78d4 0%, #145da8 100%);
   color: #ffffff;
   font-family: var(--font-mono);
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, 0.3), inset 0 -3px 0 rgba(8, 30, 68, 0.35);
   clip-path: polygon(
     9px 0%,
     calc(100% - 9px) 0%,
@@ -247,17 +304,16 @@ a {
     0% calc(100% - 9px),
     0% 9px
   );
-  transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1), transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: filter 160ms ease, transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .cq-btn-primary:hover {
-  background-color: var(--cq-depth);
+  filter: brightness(0.9);
   transform: translateY(-1px);
 }
 .cq-btn-primary:active {
   transform: translateY(0);
 }
 
-/* Secondary chamfered button (outer chamfered frame + inner chamfered fill for crisp angled border) */
 .cq-btn-secondary-wrap {
   display: inline-flex;
   padding: 1.5px;
@@ -272,7 +328,7 @@ a {
     0% calc(100% - 9px),
     0% 9px
   );
-  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .cq-btn-secondary-wrap:hover {
   transform: translateY(-1px);
@@ -299,14 +355,13 @@ a {
     0% calc(100% - 8px),
     0% 8px
   );
-  transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1), color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color 160ms ease, color 160ms ease;
 }
 .cq-btn-secondary:hover {
   background-color: var(--cq-depth);
   color: #ffffff;
 }
 
-/* Chamfered project-type toggle chips */
 .cq-chip-wrap {
   padding: 1.5px;
   background-color: #8aa2bc;
@@ -354,14 +409,10 @@ a {
   background-color: #edf5fc;
 }
 .cq-chip-active {
-  background-color: #1565c0;
+  background: linear-gradient(180deg, #1b78d4 0%, #145da8 100%);
   color: #ffffff;
 }
-.cq-chip-active:hover {
-  background-color: var(--cq-depth);
-}
 
-/* Chamfered input shells */
 .cq-input-wrap {
   padding: 1.5px;
   background-color: #9ab0c7;
@@ -398,7 +449,33 @@ a {
 }
 
 /* =========================================================
-   SITEGOONS LIVE CONSTRUCTION ANIMATIONS
+   MOCKUP B: ATMOSPHERIC QUARRY CONTROL DECK (cloud-quarry-hero.webp)
+   ========================================================= */
+
+.cq-deck-surface {
+  background-color: #edf1f5;
+  background-image:
+    linear-gradient(180deg, rgba(247, 249, 251, 0.78) 0%, rgba(232, 238, 244, 0.72) 100%),
+    url("/images/cloud-stone-texture.png");
+  background-size: auto, 420px 420px;
+}
+
+.cq-deck-rail {
+  background-color: #e9eef3;
+  background-image:
+    linear-gradient(180deg, rgba(244, 247, 250, 0.84) 0%, rgba(226, 233, 240, 0.84) 100%),
+    url("/images/cloud-stone-texture.png");
+  background-size: auto, 360px 360px;
+}
+
+.cq-deck-nav-active {
+  background: linear-gradient(90deg, #1665b8 0%, #1c76cf 100%);
+  color: #ffffff;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%);
+}
+
+/* =========================================================
+   SITEGOONS LIVE CONSTRUCTION ANIMATIONS (MOCKUP A)
    ========================================================= */
 
 @keyframes goonSawMotion {
