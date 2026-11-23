@@ -17,21 +17,21 @@ export default function QuoteLevelerGoon({ runId = 0, onNudge, className = '' })
       return undefined
     }
 
-    // Smoothly scrub the all-intra video backwards (0.90s -> 0.0s over 560ms)
-    // matching the Quote box's gravity slip, then immediately play forward to lift it back up!
+    // Scrub backwards strictly across the active hand-movement window (0.64s -> 0.0s over 560ms)
+    // so his hands move on millisecond 0 with the box, then play forward (0.0s -> 0.66s) in exact sync!
     vid.pause()
     let rafId = null
     let cancelled = false
     const SLIP_MS = 560
-    const START_TIME = 0.9
+    const START_TIME = 0.64
     const startTs = performance.now()
 
     function stepBackward(now) {
       if (cancelled) return
       const elapsed = now - startTs
       const t = Math.min(1, elapsed / SLIP_MS)
-      // Gravity-like acceleration curve matching the Quote box's slip
-      const eased = t * t
+      // Smooth gravity acceleration matching the Quote box's slip curve
+      const eased = t * t * (1.2 - 0.2 * t)
       vid.currentTime = Math.max(0, START_TIME * (1 - eased))
 
       if (t < 1) {
