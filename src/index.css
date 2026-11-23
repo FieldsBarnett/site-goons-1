@@ -159,11 +159,22 @@ a {
     linear-gradient(168deg, #217cd3 0%, #1055a2 46%, #0b3975 78%, #092a58 100%);
 }
 
-/* 3D Extruded Stone Plinth — visible thick sculpted bevel underside + cast shadow */
+/* Directional 1-point perspective elevation shadows matching each slab's extruded walls */
 .cq-slab-3d-shell {
   position: relative;
-  filter: drop-shadow(10px 26px 28px rgba(5, 21, 52, 0.52))
-    drop-shadow(2px 6px 10px rgba(5, 21, 52, 0.28));
+  filter: drop-shadow(12px 24px 28px rgba(5, 21, 52, 0.48))
+    drop-shadow(3px 6px 10px rgba(5, 21, 52, 0.24));
+}
+
+.cq-slab-3d-shell-right {
+  position: relative;
+  filter: drop-shadow(-12px 24px 28px rgba(5, 21, 52, 0.48))
+    drop-shadow(-3px 6px 10px rgba(5, 21, 52, 0.24));
+}
+
+.cq-nav-3d-shell {
+  position: relative;
+  filter: drop-shadow(0px 14px 20px rgba(5, 21, 52, 0.34));
 }
 
 /* Extruded underside & RIGHT wall (for blocks LEFT of screen center) */
@@ -229,10 +240,15 @@ a {
   );
 }
 
-/* Compact 3D extruded slab for Services & Sample cards */
+/* Compact 3D extruded slab shadows matching inner flank direction */
 .cq-slab-3d-sm-shell {
   position: relative;
-  filter: drop-shadow(6px 16px 20px rgba(5, 21, 52, 0.42));
+  filter: drop-shadow(6px 14px 20px rgba(5, 21, 52, 0.38));
+}
+
+.cq-slab-3d-sm-shell-right {
+  position: relative;
+  filter: drop-shadow(-6px 14px 20px rgba(5, 21, 52, 0.38));
 }
 
 .cq-slab-3d-sm-depth {

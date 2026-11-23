@@ -97,7 +97,7 @@ export default function PublicSite({ onNavigate }) {
       {/* Twin-Slab 3D Extruded Top Navigation Bar */}
       <header className="sticky top-0 z-40 w-full px-2 sm:px-3">
         <div className="mx-auto grid max-w-[1440px] grid-cols-[1fr_auto] items-stretch gap-2.5">
-          <div className="cq-slab-3d-sm-shell">
+          <div className="cq-nav-3d-shell">
             <nav
               aria-label="Primary navigation"
               className="cq-nav-slab-3d flex h-full items-center justify-between gap-4 px-5 py-3.5 sm:px-8"
@@ -154,7 +154,7 @@ export default function PublicSite({ onNavigate }) {
             </nav>
           </div>
 
-          <div className="cq-slab-3d-sm-shell">
+          <div className="cq-nav-3d-shell">
             <a
               href={CONTACT.phoneHref}
               className="cq-nav-slab-3d font-mono-tech flex h-full items-center gap-2 whitespace-nowrap px-4 py-3.5 text-xs font-bold tracking-wider text-[#0D2E5E] transition hover:text-[#1565C0] sm:px-7 sm:text-sm"
@@ -192,9 +192,9 @@ export default function PublicSite({ onNavigate }) {
         <section className="relative mx-auto max-w-[1440px] px-3 pb-10 pt-7 sm:px-5 lg:px-7 lg:pb-10 lg:pt-8">
           <div
             aria-hidden="true"
-            className="cq-slab-3d-shell pointer-events-none absolute -right-10 bottom-10 top-10 hidden w-20 xl:block"
+            className="cq-slab-3d-shell-right pointer-events-none absolute -right-10 bottom-10 top-10 hidden w-20 xl:block"
           >
-            <div className="cq-slab-3d-depth h-full w-full">
+            <div className="cq-slab-3d-depth-right h-full w-full">
               <div className="cq-slab-3d-face h-full w-full" />
             </div>
           </div>
@@ -269,7 +269,7 @@ export default function PublicSite({ onNavigate }) {
             <div id="quote-block" ref={quoteRef} className="relative z-30 lg:mt-[36px]">
               <div
                 key={levelRunId}
-                className="cq-slab-3d-shell quote-level-anim"
+                className="cq-slab-3d-shell-right quote-level-anim"
               >
                 <div className="cq-slab-3d-depth-right">
                   <div className="cq-slab-3d-face px-6 py-7 sm:px-8 sm:py-8">
@@ -468,9 +468,9 @@ export default function PublicSite({ onNavigate }) {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map((service, index) => (
               <article key={service.id} className="relative flex">
-                {/* Mini-builder standing squarely on the 3D top shelf of box 04 (desktop) or box 01 (mobile) */}
+                {/* Mini-builder on a step ladder standing on the 3D top shelf of box 04 (desktop) or box 01 (mobile) */}
                 {index === 3 && (
-                  <div className="pointer-events-auto absolute -top-[116px] left-[48%] z-20 hidden w-[96px] -translate-x-1/2 lg:block">
+                  <div className="pointer-events-auto absolute -top-[146px] left-[48%] z-20 hidden w-[96px] -translate-x-1/2 lg:block">
                     <QuoteLevelerGoon
                       runId={levelRunId}
                       onNudge={replayLeveling}
@@ -478,14 +478,18 @@ export default function PublicSite({ onNavigate }) {
                   </div>
                 )}
                 {index === 0 && (
-                  <div className="pointer-events-auto absolute -top-[106px] right-8 z-20 block w-[86px] lg:hidden">
+                  <div className="pointer-events-auto absolute -top-[142px] right-8 z-20 block w-[86px] lg:hidden">
                     <QuoteLevelerGoon
                       runId={levelRunId}
                       onNudge={replayLeveling}
                     />
                   </div>
                 )}
-                <div className="cq-slab-3d-sm-shell flex w-full">
+                <div
+                  className={`flex w-full ${
+                    index < 2 ? 'cq-slab-3d-sm-shell' : 'cq-slab-3d-sm-shell-right'
+                  }`}
+                >
                   <div
                     className={`flex w-full ${
                       index < 2 ? 'cq-slab-3d-bottom-left' : 'cq-slab-3d-bottom-right'
