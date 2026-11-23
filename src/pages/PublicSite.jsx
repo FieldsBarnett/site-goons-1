@@ -32,7 +32,6 @@ export default function PublicSite({ onNavigate }) {
   const [submittedQuote, setSubmittedQuote] = useState(null)
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const [levelRunId, setLevelRunId] = useState(0)
-  const [isLeveling, setIsLeveling] = useState(false)
   const quoteRef = useRef(null)
   const quoteSlabRef = useRef(null)
 
@@ -42,12 +41,7 @@ export default function PublicSite({ onNavigate }) {
     }
   }, [])
 
-  const handleCycleDone = useCallback(() => {
-    setIsLeveling(false)
-  }, [])
-
   const triggerSlipCycle = useCallback(() => {
-    setIsLeveling(true)
     setLevelRunId((n) => n + 1)
   }, [])
 
@@ -300,23 +294,6 @@ export default function PublicSite({ onNavigate }) {
                       <h2 className="font-display text-2xl text-[#0D2E5E] sm:text-[1.85rem]">
                         REQUEST A QUOTE
                       </h2>
-                      <button
-                        type="button"
-                        onClick={replayLeveling}
-                        title="Click to nudge the Quote box and watch him level it from below"
-                        className={`font-mono-tech inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap border px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider transition ${
-                          isLeveling
-                            ? 'border-[#B45309]/40 bg-[#FEF3C7] text-[#B45309]'
-                            : 'border-[#15803D]/35 bg-[#DCFCE7] text-[#15803D] hover:bg-[#BBF7D0]'
-                        }`}
-                      >
-                        <span
-                          className={`h-2 w-2 rounded-full ${
-                            isLeveling ? 'bg-[#D97706]' : 'bg-[#15803D]'
-                          }`}
-                        />
-                        {isLeveling ? 'LEVELING…' : '0.0° LEVEL'}
-                      </button>
                     </div>
 
                   {submittedQuote ? (
@@ -493,21 +470,19 @@ export default function PublicSite({ onNavigate }) {
               <article key={service.id} className="relative flex">
                 {/* Mini-builder on a taller step ladder standing on the 3D top shelf of box 04 (desktop) or box 01 (mobile), above Quote box on z-axis */}
                 {index === 3 && (
-                  <div className="pointer-events-auto absolute -top-[176px] left-[48%] z-40 hidden w-[96px] -translate-x-1/2 lg:block">
+                  <div className="pointer-events-auto absolute -top-[182px] left-[48%] z-40 hidden w-[104px] -translate-x-1/2 overflow-visible lg:block">
                     <QuoteLevelerGoon
                       runId={levelRunId}
                       onTiltChange={handleTiltChange}
-                      onCycleDone={handleCycleDone}
                       onNudge={replayLeveling}
                     />
                   </div>
                 )}
                 {index === 0 && (
-                  <div className="pointer-events-auto absolute -top-[164px] right-8 z-40 block w-[86px] lg:hidden">
+                  <div className="pointer-events-auto absolute -top-[170px] right-8 z-40 block w-[92px] overflow-visible lg:hidden">
                     <QuoteLevelerGoon
                       runId={levelRunId}
                       onTiltChange={handleTiltChange}
-                      onCycleDone={handleCycleDone}
                       onNudge={replayLeveling}
                     />
                   </div>

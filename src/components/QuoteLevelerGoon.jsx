@@ -102,7 +102,7 @@ export default function QuoteLevelerGoon({
       onClick={onNudge}
       title="Click to nudge the Quote box and watch him level it back"
       aria-label="Replay leveling animation on the Quote Request box"
-      className={`group relative flex w-full cursor-pointer flex-col items-center border-0 bg-transparent p-0 focus-visible:outline-2 focus-visible:outline-[#4DA7E6] ${className}`}
+      className={`group relative flex w-full cursor-pointer flex-col items-center overflow-visible border-0 bg-transparent p-0 focus-visible:outline-2 focus-visible:outline-[#4DA7E6] ${className}`}
     >
       <video
         ref={videoRef}
@@ -111,7 +111,7 @@ export default function QuoteLevelerGoon({
         muted
         playsInline
         preload="auto"
-        className="relative z-10 -mb-[14px] block h-auto w-full drop-shadow-[0_4px_6px_rgba(8,28,62,0.24)]"
+        className="relative z-10 -mb-[14px] block h-auto w-full overflow-visible drop-shadow-[0_4px_6px_rgba(8,28,62,0.24)]"
       />
 
       {/* Matching bold-ink cel-shaded aluminum & yellow construction step ladder */}
