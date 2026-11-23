@@ -10,19 +10,24 @@ export default function QuoteLevelerGoon({ runId = 0, onNudge, className = '' })
 
   useEffect(() => {
     const vid = videoRef.current
-    if (!vid) return
+    if (!vid) return undefined
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
     if (reduced || runId === 0) {
       vid.pause()
-      return
+      return undefined
     }
-    try {
-      vid.currentTime = 0
-      const p = vid.play()
-      if (p && typeof p.catch === 'function') p.catch(() => {})
-    } catch {
-      // ignore autoplay interruptions
-    }
+    // Start the forward lift video right as the box finishes its ~0.55s gravity slip
+    const startTimer = window.setTimeout(() => {
+      try {
+        vid.currentTime = 0
+        const p = vid.play()
+        if (p && typeof p.catch === 'function') p.catch(() => {})
+      } catch {
+        // ignore autoplay interruptions
+      }
+    }, 520)
+
+    return () => window.clearTimeout(startTimer)
   }, [runId])
 
   return (

@@ -547,36 +547,30 @@ a {
 }
 
 /* =========================================================
-   QUOTE LEVELER SLIP-AND-RECOVER ANIMATION (1.46s)
-   Starts dead-level (0deg) on load; at 2s and every 15s,
-   slips crisply to +3.4deg while the original crisp WebM
-   plays forward pushing it smoothly back to 0.0deg.
+   QUOTE LEVELER SMOOTH GRAVITY SLIP & LIFT (2.05s)
+   Only 3 keyframes with per-segment physics easing so the
+   box falls smoothly under gravity (~0.58s) and lifts back
+   in one continuous, buttery-smooth push (~1.47s).
    ========================================================= */
 
 @keyframes quotePhysicalLevel {
   0% {
     transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.35, 0, 0.72, 0.2);
   }
-  12% {
+  28% {
     transform: rotate(3.45deg);
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
-  26% {
-    transform: rotate(2.4deg);
-  }
-  48% {
-    transform: rotate(0.55deg);
-  }
-  62% {
-    transform: rotate(-0.18deg);
-  }
-  74%, 100% {
+  100% {
     transform: rotate(0deg);
   }
 }
 
 .quote-level-anim {
   transform-origin: 0% 100%;
-  animation: quotePhysicalLevel 1.46s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform;
+  animation: quotePhysicalLevel 2.05s both;
 }
 
 @media (prefers-reduced-motion: reduce) {
