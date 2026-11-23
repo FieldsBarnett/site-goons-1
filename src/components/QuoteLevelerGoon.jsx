@@ -16,18 +16,39 @@ export default function QuoteLevelerGoon({ runId = 0, onNudge, className = '' })
       vid.pause()
       return undefined
     }
-    // Start the forward lift video right as the box finishes its ~0.55s gravity slip
-    const startTimer = window.setTimeout(() => {
-      try {
+
+    // Smoothly scrub the all-intra video backwards (0.90s -> 0.0s over 560ms)
+    // matching the Quote box's gravity slip, then immediately play forward to lift it back up!
+    vid.pause()
+    let rafId = null
+    let cancelled = false
+    const SLIP_MS = 560
+    const START_TIME = 0.9
+    const startTs = performance.now()
+
+    function stepBackward(now) {
+      if (cancelled) return
+      const elapsed = now - startTs
+      const t = Math.min(1, elapsed / SLIP_MS)
+      // Gravity-like acceleration curve matching the Quote box's slip
+      const eased = t * t
+      vid.currentTime = Math.max(0, START_TIME * (1 - eased))
+
+      if (t < 1) {
+        rafId = window.requestAnimationFrame(stepBackward)
+      } else {
         vid.currentTime = 0
         const p = vid.play()
         if (p && typeof p.catch === 'function') p.catch(() => {})
-      } catch {
-        // ignore autoplay interruptions
       }
-    }, 520)
+    }
 
-    return () => window.clearTimeout(startTimer)
+    rafId = window.requestAnimationFrame(stepBackward)
+
+    return () => {
+      cancelled = true
+      if (rafId != null) window.cancelAnimationFrame(rafId)
+    }
   }, [runId])
 
   return (
