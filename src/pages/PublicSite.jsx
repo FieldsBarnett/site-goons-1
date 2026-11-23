@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import QuoteLevelerGoon from '../components/QuoteLevelerGoon'
 import {
   ATLANTA_AREAS,
@@ -34,16 +34,22 @@ export default function PublicSite({ onNavigate }) {
   const [levelRunId, setLevelRunId] = useState(0)
   const [isLeveling, setIsLeveling] = useState(false)
   const quoteRef = useRef(null)
-  const levelTimerRef = useRef(null)
+  const quoteSlabRef = useRef(null)
 
-  function triggerSlipCycle() {
-    if (levelTimerRef.current) window.clearTimeout(levelTimerRef.current)
+  const handleTiltChange = useCallback((deg) => {
+    if (quoteSlabRef.current) {
+      quoteSlabRef.current.style.transform = `rotate(${deg.toFixed(3)}deg)`
+    }
+  }, [])
+
+  const handleCycleDone = useCallback(() => {
+    setIsLeveling(false)
+  }, [])
+
+  const triggerSlipCycle = useCallback(() => {
     setIsLeveling(true)
     setLevelRunId((n) => n + 1)
-    levelTimerRef.current = window.setTimeout(() => {
-      setIsLeveling(false)
-    }, 1560)
-  }
+  }, [])
 
   // Start dead-level on page open; slip after 2s, then slip every 15s thereafter
   useEffect(() => {
@@ -61,9 +67,8 @@ export default function PublicSite({ onNavigate }) {
     return () => {
       window.clearTimeout(firstSlipId)
       if (intervalId) window.clearInterval(intervalId)
-      if (levelTimerRef.current) window.clearTimeout(levelTimerRef.current)
     }
-  }, [])
+  }, [triggerSlipCycle])
 
   function replayLeveling() {
     triggerSlipCycle()
@@ -286,8 +291,8 @@ export default function PublicSite({ onNavigate }) {
             {/* RIGHT 3D HOISTED QUOTE REQUEST MONOLITH — sits behind the leveler goon on z-axis */}
             <div id="quote-block" ref={quoteRef} className="relative z-10 lg:mt-[36px]">
               <div
-                key={levelRunId}
-                className={`cq-slab-3d-shell-right ${levelRunId > 0 ? 'quote-level-anim' : ''}`}
+                ref={quoteSlabRef}
+                className="cq-slab-3d-shell-right origin-bottom-left will-change-transform"
               >
                 <div className="cq-slab-3d-depth-right">
                   <div className="cq-slab-3d-face px-6 py-7 sm:px-8 sm:py-8">
@@ -491,6 +496,8 @@ export default function PublicSite({ onNavigate }) {
                   <div className="pointer-events-auto absolute -top-[176px] left-[48%] z-40 hidden w-[96px] -translate-x-1/2 lg:block">
                     <QuoteLevelerGoon
                       runId={levelRunId}
+                      onTiltChange={handleTiltChange}
+                      onCycleDone={handleCycleDone}
                       onNudge={replayLeveling}
                     />
                   </div>
@@ -499,6 +506,8 @@ export default function PublicSite({ onNavigate }) {
                   <div className="pointer-events-auto absolute -top-[164px] right-8 z-40 block w-[86px] lg:hidden">
                     <QuoteLevelerGoon
                       runId={levelRunId}
+                      onTiltChange={handleTiltChange}
+                      onCycleDone={handleCycleDone}
                       onNudge={replayLeveling}
                     />
                   </div>
