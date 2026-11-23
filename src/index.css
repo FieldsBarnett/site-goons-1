@@ -547,42 +547,36 @@ a {
 }
 
 /* =========================================================
-   QUOTE LEVELER PHYSICAL PUSH-UP ANIMATION (FAL.AI SPRITE SYNC)
-   21-frame transparent sprite sheet (220x322 per frame, 1.45s)
-   synchronized with the Quote Request 3D slab tilting from
-   +3.4deg (dipped onto his crouched palms) to 0.0deg level.
+   QUOTE LEVELER SLIP-AND-RECOVER ANIMATION (1.46s)
+   Starts dead-level (0deg) on load; at 2s and every 15s,
+   slips crisply to +3.4deg while the original crisp WebM
+   plays forward pushing it smoothly back to 0.0deg.
    ========================================================= */
 
 @keyframes quotePhysicalLevel {
-  0%, 10% {
-    transform: rotate(3.4deg);
+  0% {
+    transform: rotate(0deg);
+  }
+  12% {
+    transform: rotate(3.45deg);
   }
   26% {
     transform: rotate(2.4deg);
   }
-  44% {
-    transform: rotate(0.6deg);
+  48% {
+    transform: rotate(0.55deg);
   }
-  56% {
+  62% {
     transform: rotate(-0.18deg);
   }
-  68%, 100% {
+  74%, 100% {
     transform: rotate(0deg);
-  }
-}
-
-@keyframes qlSpritePlay {
-  from {
-    background-position: 0% 0%;
-  }
-  to {
-    background-position: 100% 0%;
   }
 }
 
 .quote-level-anim {
   transform-origin: 0% 100%;
-  animation: quotePhysicalLevel 1.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: quotePhysicalLevel 1.46s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {

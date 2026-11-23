@@ -31,24 +31,42 @@ export default function PublicSite({ onNavigate }) {
   const [formError, setFormError] = useState('')
   const [submittedQuote, setSubmittedQuote] = useState(null)
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
-  const [levelRunId, setLevelRunId] = useState(1)
-  const [isLeveling, setIsLeveling] = useState(true)
+  const [levelRunId, setLevelRunId] = useState(0)
+  const [isLeveling, setIsLeveling] = useState(false)
   const quoteRef = useRef(null)
   const levelTimerRef = useRef(null)
 
-  useEffect(() => {
-    levelTimerRef.current = window.setTimeout(() => {
-      setIsLeveling(false)
-    }, 1500)
-    return () => {
-      if (levelTimerRef.current) window.clearTimeout(levelTimerRef.current)
-    }
-  }, [levelRunId])
-
-  function replayLeveling() {
+  function triggerSlipCycle() {
     if (levelTimerRef.current) window.clearTimeout(levelTimerRef.current)
     setIsLeveling(true)
     setLevelRunId((n) => n + 1)
+    levelTimerRef.current = window.setTimeout(() => {
+      setIsLeveling(false)
+    }, 1500)
+  }
+
+  // Start dead-level on page open; slip after 2s, then slip every 15s thereafter
+  useEffect(() => {
+    const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    if (reduced) return undefined
+
+    let intervalId = null
+    const firstSlipId = window.setTimeout(() => {
+      triggerSlipCycle()
+      intervalId = window.setInterval(() => {
+        triggerSlipCycle()
+      }, 15000)
+    }, 2000)
+
+    return () => {
+      window.clearTimeout(firstSlipId)
+      if (intervalId) window.clearInterval(intervalId)
+      if (levelTimerRef.current) window.clearTimeout(levelTimerRef.current)
+    }
+  }, [])
+
+  function replayLeveling() {
+    triggerSlipCycle()
   }
 
   function jumpToQuoteWithTrade(tradeId) {
@@ -269,7 +287,7 @@ export default function PublicSite({ onNavigate }) {
             <div id="quote-block" ref={quoteRef} className="relative z-10 lg:mt-[36px]">
               <div
                 key={levelRunId}
-                className="cq-slab-3d-shell-right quote-level-anim"
+                className={`cq-slab-3d-shell-right ${levelRunId > 0 ? 'quote-level-anim' : ''}`}
               >
                 <div className="cq-slab-3d-depth-right">
                   <div className="cq-slab-3d-face px-6 py-7 sm:px-8 sm:py-8">

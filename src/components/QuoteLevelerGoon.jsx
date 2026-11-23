@@ -5,14 +5,14 @@ import { useEffect, useRef } from 'react'
  * standing on a sturdy cel-shaded construction step ladder so his raised hands
  * reach cleanly up to the bottom 3D bevel of the Quote Request slab.
  */
-export default function QuoteLevelerGoon({ runId = 1, onNudge, className = '' }) {
+export default function QuoteLevelerGoon({ runId = 0, onNudge, className = '' }) {
   const videoRef = useRef(null)
 
   useEffect(() => {
     const vid = videoRef.current
     if (!vid) return
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-    if (reduced) {
+    if (reduced || runId === 0) {
       vid.pause()
       return
     }
@@ -33,12 +33,11 @@ export default function QuoteLevelerGoon({ runId = 1, onNudge, className = '' })
       aria-label="Replay leveling animation on the Quote Request box"
       className={`group relative flex w-full cursor-pointer flex-col items-center border-0 bg-transparent p-0 focus-visible:outline-2 focus-visible:outline-[#4DA7E6] ${className}`}
     >
-      {/* Real transparent VP9 WebM video of the mini-builder standing on the top step */}
+      {/* Pristine original transparent VP9 WebM: starts steady (poster), slips to crouch and plays forward smoothly on each cycle */}
       <video
         ref={videoRef}
         src="/videos/goon-leveler.webm"
         poster="/images/goon-leveler-rest.png"
-        autoPlay
         muted
         playsInline
         preload="auto"
