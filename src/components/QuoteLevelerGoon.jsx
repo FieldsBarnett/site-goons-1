@@ -47,24 +47,24 @@ export default function QuoteLevelerGoon({ runId = 1, onNudge, className = '' })
 
       {/* Matching bold-ink cel-shaded aluminum & yellow construction step ladder */}
       <svg
-        viewBox="0 0 112 58"
+        viewBox="0 0 112 78"
         fill="none"
         aria-hidden="true"
         className="relative z-0 block h-auto w-[96%] drop-shadow-[0_6px_8px_rgba(8,28,62,0.28)]"
       >
         {/* Ground contact shadow on the 3D top stone shelf */}
-        <ellipse cx="56" cy="53" rx="44" ry="4.5" fill="#092145" opacity="0.28" />
+        <ellipse cx="56" cy="73" rx="45" ry="4.5" fill="#092145" opacity="0.28" />
 
         {/* Back support struts */}
         <path
-          d="M27 12 L18 51 L25 51 L33 14 Z"
+          d="M28 12 L16 71 L23 71 L34 14 Z"
           fill="#8CA3BC"
           stroke="#1B2432"
           strokeWidth="2.6"
           strokeLinejoin="round"
         />
         <path
-          d="M85 12 L94 51 L87 51 L79 14 Z"
+          d="M84 12 L96 71 L89 71 L78 14 Z"
           fill="#7B93AE"
           stroke="#1B2432"
           strokeWidth="2.6"
@@ -73,9 +73,9 @@ export default function QuoteLevelerGoon({ runId = 1, onNudge, className = '' })
 
         {/* Lower horizontal brace */}
         <rect
-          x="21"
-          y="36"
-          width="70"
+          x="18"
+          y="55"
+          width="76"
           height="5.5"
           rx="1.5"
           fill="#CBD5E1"
@@ -85,24 +85,37 @@ export default function QuoteLevelerGoon({ runId = 1, onNudge, className = '' })
 
         {/* Front A-frame rails (safety yellow) */}
         <path
-          d="M22 10 L10 52 L19 52 L30 12 Z"
+          d="M22 10 L8 72 L17 72 L30 12 Z"
           fill="#FACC15"
           stroke="#1B2432"
           strokeWidth="2.6"
           strokeLinejoin="round"
         />
         <path
-          d="M90 10 L102 52 L93 52 L82 12 Z"
+          d="M90 10 L104 72 L95 72 L82 12 Z"
           fill="#EAB308"
           stroke="#1B2432"
           strokeWidth="2.6"
           strokeLinejoin="round"
         />
 
-        {/* Middle aluminum tread step */}
+        {/* Lower-middle aluminum tread step */}
+        <rect
+          x="15"
+          y="41"
+          width="82"
+          height="7.5"
+          rx="2"
+          fill="#E2E8F0"
+          stroke="#1B2432"
+          strokeWidth="2.6"
+        />
+        <line x1="18" y1="44.5" x2="94" y2="44.5" stroke="#94A3B8" strokeWidth="1.5" />
+
+        {/* Upper-middle aluminum tread step */}
         <rect
           x="18"
-          y="25"
+          y="24"
           width="76"
           height="7.5"
           rx="2"
@@ -110,7 +123,7 @@ export default function QuoteLevelerGoon({ runId = 1, onNudge, className = '' })
           stroke="#1B2432"
           strokeWidth="2.6"
         />
-        <line x1="21" y1="28.5" x2="91" y2="28.5" stroke="#94A3B8" strokeWidth="1.5" />
+        <line x1="21" y1="27.5" x2="91" y2="27.5" stroke="#94A3B8" strokeWidth="1.5" />
 
         {/* Top platform step (where his boots rest!) */}
         <rect
@@ -126,8 +139,8 @@ export default function QuoteLevelerGoon({ runId = 1, onNudge, className = '' })
         <line x1="19" y1="11.5" x2="93" y2="11.5" stroke="#CBD5E1" strokeWidth="1.8" />
 
         {/* Rubber non-slip feet */}
-        <rect x="8.5" y="49" width="12" height="5" rx="1.5" fill="#273244" stroke="#1B2432" strokeWidth="2" />
-        <rect x="91.5" y="49" width="12" height="5" rx="1.5" fill="#273244" stroke="#1B2432" strokeWidth="2" />
+        <rect x="6.5" y="69" width="12" height="5" rx="1.5" fill="#273244" stroke="#1B2432" strokeWidth="2" />
+        <rect x="93.5" y="69" width="12" height="5" rx="1.5" fill="#273244" stroke="#1B2432" strokeWidth="2" />
       </svg>
     </button>
   )

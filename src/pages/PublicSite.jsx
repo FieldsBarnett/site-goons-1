@@ -265,8 +265,8 @@ export default function PublicSite({ onNavigate }) {
               </div>
             </div>
 
-            {/* RIGHT 3D HOISTED QUOTE REQUEST MONOLITH — sits right above our mini-builder's raised palms */}
-            <div id="quote-block" ref={quoteRef} className="relative z-30 lg:mt-[36px]">
+            {/* RIGHT 3D HOISTED QUOTE REQUEST MONOLITH — sits behind the leveler goon on z-axis */}
+            <div id="quote-block" ref={quoteRef} className="relative z-10 lg:mt-[36px]">
               <div
                 key={levelRunId}
                 className="cq-slab-3d-shell-right quote-level-anim"
@@ -447,11 +447,11 @@ export default function PublicSite({ onNavigate }) {
           </div>
         </section>
 
-        {/* 3D EXTRUDED SERVICES PLINTH ROW — our mini-builder stands on the top edge of box 04 directly beneath the Quote box */}
+        {/* 3D EXTRUDED SERVICES PLINTH ROW — higher z-index so the leveler goon overlaps in front of the Quote box */}
         <section
           id="services"
           aria-labelledby="services-heading"
-          className="mx-auto max-w-[1440px] px-3 pb-14 pt-0 sm:px-5 lg:px-7"
+          className="relative z-20 mx-auto max-w-[1440px] px-3 pb-14 pt-0 sm:px-5 lg:px-7"
         >
           <div className="mb-4 flex flex-wrap items-end justify-between gap-4 px-1 lg:mb-3 lg:max-w-[54%]">
             <div>
@@ -468,9 +468,9 @@ export default function PublicSite({ onNavigate }) {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map((service, index) => (
               <article key={service.id} className="relative flex">
-                {/* Mini-builder on a step ladder standing on the 3D top shelf of box 04 (desktop) or box 01 (mobile) */}
+                {/* Mini-builder on a taller step ladder standing on the 3D top shelf of box 04 (desktop) or box 01 (mobile), above Quote box on z-axis */}
                 {index === 3 && (
-                  <div className="pointer-events-auto absolute -top-[146px] left-[48%] z-20 hidden w-[96px] -translate-x-1/2 lg:block">
+                  <div className="pointer-events-auto absolute -top-[176px] left-[48%] z-40 hidden w-[96px] -translate-x-1/2 lg:block">
                     <QuoteLevelerGoon
                       runId={levelRunId}
                       onNudge={replayLeveling}
@@ -478,7 +478,7 @@ export default function PublicSite({ onNavigate }) {
                   </div>
                 )}
                 {index === 0 && (
-                  <div className="pointer-events-auto absolute -top-[142px] right-8 z-20 block w-[86px] lg:hidden">
+                  <div className="pointer-events-auto absolute -top-[164px] right-8 z-40 block w-[86px] lg:hidden">
                     <QuoteLevelerGoon
                       runId={levelRunId}
                       onNudge={replayLeveling}
