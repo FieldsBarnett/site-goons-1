@@ -1,4 +1,5 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import QuoteLevelerGoon from '../components/QuoteLevelerGoon'
 import {
   ATLANTA_AREAS,
   CONTACT,
@@ -30,7 +31,25 @@ export default function PublicSite({ onNavigate }) {
   const [formError, setFormError] = useState('')
   const [submittedQuote, setSubmittedQuote] = useState(null)
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
+  const [levelRunId, setLevelRunId] = useState(1)
+  const [isLeveling, setIsLeveling] = useState(true)
   const quoteRef = useRef(null)
+  const levelTimerRef = useRef(null)
+
+  useEffect(() => {
+    levelTimerRef.current = window.setTimeout(() => {
+      setIsLeveling(false)
+    }, 2150)
+    return () => {
+      if (levelTimerRef.current) window.clearTimeout(levelTimerRef.current)
+    }
+  }, [levelRunId])
+
+  function replayLeveling() {
+    if (levelTimerRef.current) window.clearTimeout(levelTimerRef.current)
+    setIsLeveling(true)
+    setLevelRunId((n) => n + 1)
+  }
 
   function jumpToQuoteWithTrade(tradeId) {
     setSelectedTrade(tradeId)
@@ -170,7 +189,7 @@ export default function PublicSite({ onNavigate }) {
 
       <main id="main-content">
         {/* FIRST VIEWPORT: 3D Extruded Cut-Blocks + Sky Void + Far-Right Monolith Pillar */}
-        <section className="relative mx-auto max-w-[1440px] px-3 pb-10 pt-7 sm:px-5 lg:px-7 lg:pt-10">
+        <section className="relative mx-auto max-w-[1440px] px-3 pb-8 pt-7 sm:px-5 lg:px-7 lg:pb-4 lg:pt-8">
           <div
             aria-hidden="true"
             className="cq-slab-3d-shell pointer-events-none absolute -right-10 bottom-10 top-10 hidden w-20 xl:block"
@@ -246,18 +265,36 @@ export default function PublicSite({ onNavigate }) {
               </div>
             </div>
 
-            {/* RIGHT 3D HOISTED QUOTE REQUEST MONOLITH */}
-            <div id="quote-block" ref={quoteRef} className="cq-slab-3d-shell">
-              <div className="cq-slab-3d-depth">
-                <div className="cq-slab-3d-face px-6 py-7 sm:px-8 sm:py-8">
-                  <div className="flex items-center justify-between gap-2 border-b border-[#C9D2DB] pb-3.5">
-                    <h2 className="font-display text-2xl text-[#0D2E5E] sm:text-[1.85rem]">
-                      REQUEST A QUOTE
-                    </h2>
-                    <span className="font-mono-tech text-[11px] font-bold uppercase tracking-wider text-[#3B4F68]">
-                      ATLANTA, GA
-                    </span>
-                  </div>
+            {/* RIGHT 3D HOISTED QUOTE REQUEST MONOLITH — sits lower on desktop so our mini-builder below physically pushes it level */}
+            <div id="quote-block" ref={quoteRef} className="relative lg:mt-[92px]">
+              <div
+                key={levelRunId}
+                className="cq-slab-3d-shell quote-level-anim"
+              >
+                <div className="cq-slab-3d-depth">
+                  <div className="cq-slab-3d-face px-6 py-7 sm:px-8 sm:py-8">
+                    <div className="flex items-center justify-between gap-2 border-b border-[#C9D2DB] pb-3.5">
+                      <h2 className="font-display text-2xl text-[#0D2E5E] sm:text-[1.85rem]">
+                        REQUEST A QUOTE
+                      </h2>
+                      <button
+                        type="button"
+                        onClick={replayLeveling}
+                        title="Click to nudge the Quote box and watch him level it from below"
+                        className={`font-mono-tech inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap border px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider transition ${
+                          isLeveling
+                            ? 'border-[#B45309]/40 bg-[#FEF3C7] text-[#B45309]'
+                            : 'border-[#15803D]/35 bg-[#DCFCE7] text-[#15803D] hover:bg-[#BBF7D0]'
+                        }`}
+                      >
+                        <span
+                          className={`h-2 w-2 rounded-full ${
+                            isLeveling ? 'bg-[#D97706]' : 'bg-[#15803D]'
+                          }`}
+                        />
+                        {isLeveling ? 'LEVELING…' : '0.0° LEVEL'}
+                      </button>
+                    </div>
 
                   {submittedQuote ? (
                     <div className="mt-5 space-y-4">
@@ -405,30 +442,53 @@ export default function PublicSite({ onNavigate }) {
                   )}
                 </div>
               </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* 3D EXTRUDED SERVICES PLINTH ROW */}
+        {/* 3D EXTRUDED SERVICES PLINTH ROW — our mini-builder stands on the top edge of box 04 directly beneath the Quote box */}
         <section
           id="services"
           aria-labelledby="services-heading"
-          className="mx-auto max-w-[1440px] px-3 pb-14 pt-4 sm:px-5 lg:px-7"
+          className="mx-auto max-w-[1440px] px-3 pb-14 pt-0 sm:px-5 lg:px-7"
         >
-          <div className="mb-6 flex flex-wrap items-end justify-between gap-4 px-1">
-            <h2 id="services-heading" className="font-display text-3xl text-white sm:text-4xl">
-              RESIDENTIAL SERVICES
-            </h2>
-            <p className="max-w-md text-sm text-[#D7E9FA] sm:text-base">
-              Built exclusively for Atlanta homeowners — kitchens, bathrooms, additions, and custom
-              renovations.
-            </p>
+          <div className="mb-4 flex flex-wrap items-end justify-between gap-4 px-1 lg:mb-3 lg:max-w-[54%]">
+            <div>
+              <h2 id="services-heading" className="font-display text-3xl text-white sm:text-4xl">
+                RESIDENTIAL SERVICES
+              </h2>
+              <p className="mt-1 max-w-md text-sm text-[#D7E9FA] sm:text-base">
+                Built exclusively for Atlanta homeowners — kitchens, bathrooms, additions, and custom
+                renovations.
+              </p>
+            </div>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {SERVICES.map((service) => (
-              <article key={service.id} className="cq-slab-3d-sm-shell flex">
-                <div className="cq-slab-3d-sm-depth flex w-full">
+            {SERVICES.map((service, index) => (
+              <article key={service.id} className="relative flex">
+                {/* Mini-builder standing squarely on top of box 04 (desktop) or box 01 (mobile) pushing up the Quote box */}
+                {index === 3 && (
+                  <div className="pointer-events-auto absolute -top-[108px] left-[44%] z-30 hidden w-[106px] -translate-x-1/2 lg:block">
+                    <QuoteLevelerGoon
+                      key={levelRunId}
+                      leveling={isLeveling}
+                      onNudge={replayLeveling}
+                    />
+                  </div>
+                )}
+                {index === 0 && (
+                  <div className="pointer-events-auto absolute -top-[92px] right-8 z-30 block w-[86px] lg:hidden">
+                    <QuoteLevelerGoon
+                      key={levelRunId}
+                      leveling={isLeveling}
+                      onNudge={replayLeveling}
+                    />
+                  </div>
+                )}
+                <div className="cq-slab-3d-sm-shell flex w-full">
+                  <div className="cq-slab-3d-sm-depth flex w-full">
                   <div className="cq-slab-3d-sm-face flex w-full flex-col justify-between p-6">
                     <div>
                       <div className="flex items-baseline gap-2 border-b border-[#C9D2DB] pb-3">
@@ -468,6 +528,7 @@ export default function PublicSite({ onNavigate }) {
                       </button>
                     </div>
                   </div>
+                </div>
                 </div>
               </article>
             ))}
