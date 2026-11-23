@@ -42,7 +42,7 @@ export default function PublicSite({ onNavigate }) {
     setLevelRunId((n) => n + 1)
     levelTimerRef.current = window.setTimeout(() => {
       setIsLeveling(false)
-    }, 1260)
+    }, 1560)
   }
 
   // Start dead-level on page open; slip after 2s, then slip every 15s thereafter

@@ -547,12 +547,10 @@ a {
 }
 
 /* =========================================================
-   QUOTE LEVELER HAND-LOCKED SLIP & LIFT (1.22s)
-   Matched to the exact 0.64s hand travel in goon-leveler.webm:
-   - 0% -> 46% (560ms): smooth gravity slip 0deg -> +3.45deg
-     synced to backward scrub 0.64s -> 0.00s
-   - 46% -> 100% (660ms): damped lift +3.45deg -> 0.0deg
-     synced to forward lift 0.00s -> 0.66s with ZERO overshoot
+   QUOTE LEVELER HAND-SYNCED SLIP & SPRING LIFT (1.52s)
+   - 0% -> 37% (560ms): smooth gravity slip 0deg -> +3.45deg
+   - 37% -> 100% (960ms): smooth lift with natural overshoot
+     (cubic-bezier y1=1.22) settling cleanly at 0.0deg
    ========================================================= */
 
 @keyframes quotePhysicalLevel {
@@ -560,9 +558,9 @@ a {
     transform: rotate(0deg);
     animation-timing-function: cubic-bezier(0.4, 0, 0.8, 0.45);
   }
-  46% {
+  37% {
     transform: rotate(3.45deg);
-    animation-timing-function: cubic-bezier(0.22, 0.78, 0.35, 1);
+    animation-timing-function: cubic-bezier(0.22, 1.22, 0.36, 1);
   }
   100% {
     transform: rotate(0deg);
@@ -572,7 +570,7 @@ a {
 .quote-level-anim {
   transform-origin: 0% 100%;
   will-change: transform;
-  animation: quotePhysicalLevel 1.22s both;
+  animation: quotePhysicalLevel 1.52s both;
 }
 
 @media (prefers-reduced-motion: reduce) {
