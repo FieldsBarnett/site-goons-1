@@ -166,22 +166,41 @@ a {
     drop-shadow(2px 6px 10px rgba(5, 21, 52, 0.28));
 }
 
-/* Extruded underside & right wall of the 3D stone slab */
+/* Extruded underside & RIGHT wall (for blocks LEFT of screen center) */
 .cq-slab-3d-depth {
   position: relative;
-  padding: 0 14px 18px 0;
-  background: linear-gradient(155deg, #d7e2ec 0%, #b7c8da 45%, #8ca4be 100%);
+  padding: 0 18px 18px 0;
+  background: linear-gradient(150deg, #dce6f0 0%, #b5c7da 48%, #89a2be 100%);
   clip-path: polygon(
     20px 0%,
-    calc(100% - 34px) 0%,
-    calc(100% - 14px) 20px,
-    100% 34px,
+    calc(100% - 38px) 0%,
+    calc(100% - 18px) 20px,
+    100% 38px,
     100% calc(100% - 20px),
     calc(100% - 20px) 100%,
-    34px 100%,
-    14px calc(100% - 18px),
-    0% calc(100% - 34px),
+    38px 100%,
+    18px calc(100% - 18px),
+    0% calc(100% - 38px),
     0% 20px
+  );
+}
+
+/* Extruded underside & LEFT wall (for blocks RIGHT of screen center — shows left side facing center!) */
+.cq-slab-3d-depth-right {
+  position: relative;
+  padding: 0 0 18px 18px;
+  background: linear-gradient(210deg, #dce6f0 0%, #b1c4d8 48%, #839cb8 100%);
+  clip-path: polygon(
+    38px 0%,
+    calc(100% - 20px) 0%,
+    100% 20px,
+    100% calc(100% - 38px),
+    calc(100% - 18px) calc(100% - 18px),
+    calc(100% - 38px) 100%,
+    20px 100%,
+    0% calc(100% - 20px),
+    0% 38px,
+    18px 20px
   );
 }
 
@@ -229,6 +248,43 @@ a {
     calc(100% - 14px) 100%,
     24px 100%,
     9px calc(100% - 13px),
+    0% calc(100% - 24px),
+    0% 14px
+  );
+}
+
+/* Bottom-row slabs (below center horizon): show their sunlit TOP 3D shelf + inner flank facing center */
+.cq-slab-3d-bottom-left {
+  position: relative;
+  padding: 16px 10px 0 0;
+  background: linear-gradient(180deg, #eef4f9 0%, #c6d5e5 42%, #9eb4cc 100%);
+  clip-path: polygon(
+    24px 0%,
+    calc(100% - 14px) 0%,
+    100% 14px,
+    100% calc(100% - 24px),
+    calc(100% - 10px) calc(100% - 14px),
+    calc(100% - 24px) 100%,
+    14px 100%,
+    0% calc(100% - 14px),
+    0% 28px,
+    10px 16px
+  );
+}
+
+.cq-slab-3d-bottom-right {
+  position: relative;
+  padding: 16px 0 0 10px;
+  background: linear-gradient(180deg, #eef4f9 0%, #c6d5e5 42%, #9eb4cc 100%);
+  clip-path: polygon(
+    14px 0%,
+    calc(100% - 24px) 0%,
+    calc(100% - 10px) 16px,
+    100% 28px,
+    100% calc(100% - 14px),
+    calc(100% - 14px) 100%,
+    24px 100%,
+    10px calc(100% - 14px),
     0% calc(100% - 24px),
     0% 14px
   );
@@ -475,103 +531,46 @@ a {
 }
 
 /* =========================================================
-   QUOTE LEVELER PHYSICAL PUSH-UP ANIMATION
-   Synchronized between the Quote Request 3D slab (pivoting
-   from its bottom-left corner) and the mini-builder standing
-   on the Services slab below pushing its right edge level.
+   QUOTE LEVELER PHYSICAL PUSH-UP ANIMATION (FAL.AI SPRITE SYNC)
+   21-frame transparent sprite sheet (220x322 per frame, 1.45s)
+   synchronized with the Quote Request 3D slab tilting from
+   +3.4deg (dipped onto his crouched palms) to 0.0deg level.
    ========================================================= */
 
 @keyframes quotePhysicalLevel {
   0%, 10% {
-    transform: rotate(3.2deg);
+    transform: rotate(3.4deg);
   }
-  28% {
-    transform: rotate(1.35deg);
+  26% {
+    transform: rotate(2.4deg);
   }
-  40% {
-    transform: rotate(1.75deg);
+  44% {
+    transform: rotate(0.6deg);
   }
-  62% {
-    transform: rotate(-0.2deg);
+  56% {
+    transform: rotate(-0.18deg);
   }
-  74%, 100% {
+  68%, 100% {
     transform: rotate(0deg);
   }
 }
 
-@keyframes qlHeaveBody {
-  0%, 10% {
-    transform: translateY(7px) scaleY(0.95);
+@keyframes qlSpritePlay {
+  from {
+    background-position: 0% 0%;
   }
-  28% {
-    transform: translateY(2px) scaleY(1.01);
-  }
-  40% {
-    transform: translateY(5px) scaleY(0.97);
-  }
-  62% {
-    transform: translateY(-2px) scaleY(1.03);
-  }
-  74%, 100% {
-    transform: translateY(0px) scaleY(1);
-  }
-}
-
-@keyframes qlHeaveArms {
-  0%, 10% {
-    transform: translateY(4px);
-  }
-  28% {
-    transform: translateY(-2px);
-  }
-  40% {
-    transform: translateY(2px);
-  }
-  62% {
-    transform: translateY(-4px);
-  }
-  74%, 100% {
-    transform: translateY(0px);
-  }
-}
-
-@keyframes qlIdleBreath {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-1px);
+  to {
+    background-position: 100% 0%;
   }
 }
 
 .quote-level-anim {
   transform-origin: 0% 100%;
-  animation: quotePhysicalLevel 2.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.ql-heave-body {
-  transform-box: fill-box;
-  transform-origin: 50% 100%;
-  animation: qlHeaveBody 2.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.ql-heave-arms {
-  transform-box: fill-box;
-  transform-origin: 50% 100%;
-  animation: qlHeaveArms 2.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.ql-idle-body {
-  transform-box: fill-box;
-  transform-origin: 50% 100%;
-  animation: qlIdleBreath 3.6s ease-in-out infinite;
+  animation: quotePhysicalLevel 1.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .quote-level-anim,
-  .ql-heave-body,
-  .ql-heave-arms,
-  .ql-idle-body {
+  .quote-level-anim {
     animation: none !important;
     transform: none !important;
   }

@@ -39,7 +39,7 @@ export default function PublicSite({ onNavigate }) {
   useEffect(() => {
     levelTimerRef.current = window.setTimeout(() => {
       setIsLeveling(false)
-    }, 2150)
+    }, 1500)
     return () => {
       if (levelTimerRef.current) window.clearTimeout(levelTimerRef.current)
     }
@@ -189,7 +189,7 @@ export default function PublicSite({ onNavigate }) {
 
       <main id="main-content">
         {/* FIRST VIEWPORT: 3D Extruded Cut-Blocks + Sky Void + Far-Right Monolith Pillar */}
-        <section className="relative mx-auto max-w-[1440px] px-3 pb-8 pt-7 sm:px-5 lg:px-7 lg:pb-4 lg:pt-8">
+        <section className="relative mx-auto max-w-[1440px] px-3 pb-10 pt-7 sm:px-5 lg:px-7 lg:pb-10 lg:pt-8">
           <div
             aria-hidden="true"
             className="cq-slab-3d-shell pointer-events-none absolute -right-10 bottom-10 top-10 hidden w-20 xl:block"
@@ -265,13 +265,13 @@ export default function PublicSite({ onNavigate }) {
               </div>
             </div>
 
-            {/* RIGHT 3D HOISTED QUOTE REQUEST MONOLITH — sits lower on desktop so our mini-builder below physically pushes it level */}
-            <div id="quote-block" ref={quoteRef} className="relative lg:mt-[92px]">
+            {/* RIGHT 3D HOISTED QUOTE REQUEST MONOLITH — sits right above our mini-builder's raised palms */}
+            <div id="quote-block" ref={quoteRef} className="relative z-30 lg:mt-[36px]">
               <div
                 key={levelRunId}
                 className="cq-slab-3d-shell quote-level-anim"
               >
-                <div className="cq-slab-3d-depth">
+                <div className="cq-slab-3d-depth-right">
                   <div className="cq-slab-3d-face px-6 py-7 sm:px-8 sm:py-8">
                     <div className="flex items-center justify-between gap-2 border-b border-[#C9D2DB] pb-3.5">
                       <h2 className="font-display text-2xl text-[#0D2E5E] sm:text-[1.85rem]">
@@ -468,27 +468,29 @@ export default function PublicSite({ onNavigate }) {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map((service, index) => (
               <article key={service.id} className="relative flex">
-                {/* Mini-builder standing squarely on top of box 04 (desktop) or box 01 (mobile) pushing up the Quote box */}
+                {/* Mini-builder standing squarely on the 3D top shelf of box 04 (desktop) or box 01 (mobile) */}
                 {index === 3 && (
-                  <div className="pointer-events-auto absolute -top-[108px] left-[44%] z-30 hidden w-[106px] -translate-x-1/2 lg:block">
+                  <div className="pointer-events-auto absolute -top-[116px] left-[48%] z-20 hidden w-[96px] -translate-x-1/2 lg:block">
                     <QuoteLevelerGoon
-                      key={levelRunId}
-                      leveling={isLeveling}
+                      runId={levelRunId}
                       onNudge={replayLeveling}
                     />
                   </div>
                 )}
                 {index === 0 && (
-                  <div className="pointer-events-auto absolute -top-[92px] right-8 z-30 block w-[86px] lg:hidden">
+                  <div className="pointer-events-auto absolute -top-[106px] right-8 z-20 block w-[86px] lg:hidden">
                     <QuoteLevelerGoon
-                      key={levelRunId}
-                      leveling={isLeveling}
+                      runId={levelRunId}
                       onNudge={replayLeveling}
                     />
                   </div>
                 )}
                 <div className="cq-slab-3d-sm-shell flex w-full">
-                  <div className="cq-slab-3d-sm-depth flex w-full">
+                  <div
+                    className={`flex w-full ${
+                      index < 2 ? 'cq-slab-3d-bottom-left' : 'cq-slab-3d-bottom-right'
+                    }`}
+                  >
                   <div className="cq-slab-3d-sm-face flex w-full flex-col justify-between p-6">
                     <div>
                       <div className="flex items-baseline gap-2 border-b border-[#C9D2DB] pb-3">
